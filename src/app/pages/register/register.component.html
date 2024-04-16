@@ -1,0 +1,8 @@
+<fieldset>
+    <form [formGroup]="formGroup" (ngSubmit)="sendRegister()">
+        <input [formControlName]="'controlFirstName'" placeholder="Digite seu nome" type="text">
+        @if (setMessageErrorFirstName() !== '') {
+            <p>{{ setMessageErrorFirstName() }}</p>
+        }
+    </form>
+</fieldset>
