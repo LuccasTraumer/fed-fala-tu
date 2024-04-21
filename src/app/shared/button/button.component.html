@@ -1,1 +1,10 @@
-<p>button works!</p>
+<button class="container" [disabled]="isDisabled()"  mat-flat-button [color]="color() ? color() : ''" (click)="submitEvent($event)">
+    {{ textContent() }}
+</button>
+
+@if(textContent() == '') {
+    <button class="container" mat-flat-button (click)="submitEvent($event)">
+        <span class="material-symbols-rounded">arrow_back</span>
+    </button>
+}
+

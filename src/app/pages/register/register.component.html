@@ -1,8 +1,42 @@
-<fieldset>
-    <form [formGroup]="formGroup" (ngSubmit)="sendRegister()">
-        <input [formControlName]="'controlFirstName'" placeholder="Digite seu nome" type="text">
-        @if (setMessageErrorFirstName() !== '') {
-            <p>{{ setMessageErrorFirstName() }}</p>
-        }
+<fieldset class="container">
+    <form class="container__content" [formGroup]="formGroup" (ngSubmit)="sendRegister()">
+        <mat-form-field class="container__content__first-name">
+            <mat-label>Nome</mat-label>
+            <input matInput [formControlName]="'controlFirstName'" placeholder="Digite seu nome" type="text">
+            @if (setMessageErrorFirstName() !== '') {
+                <p>{{ setMessageErrorFirstName() }}</p>
+            }
+        </mat-form-field>
+        <mat-form-field class="container__content__last-name">
+            <mat-label>Sobrenome</mat-label>
+            <input matInput type="text" placeholder="" [formControlName]="'controlLastName'">
+            @if(setMessageErrorLastName() !== '') {
+                <p>{{ setMessageErrorLastName() }}</p>
+            }
+        </mat-form-field>
+        <mat-form-field class="container__content__email">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" placeholder="" [formControlName]="'controlEmail'">
+            @if(setMessageErrorEmail() !== '') {
+                <p> {{ setMessageErrorEmail() }} </p>
+            }
+        </mat-form-field>
+
+        <mat-form-field class="container__content__phone">
+            <mat-label>Telefone</mat-label>
+            <input matInput type="text" placeholder="" [formControlName]="'controlPhoneNumber'">
+            @if(setMessageErrorPhone() !== '') {
+                <p> {{ setMessageErrorPhone() }} </p>
+            }
+        </mat-form-field>
+        <mat-form-field class="container__content__plataform">
+            <mat-label>Plataforma</mat-label>
+            <input matInput type="text" placeholder="" formControlName="'controlPlataform'">
+            @if(setMessageErrorPlataform() !== '') {
+                <p> {{ setMessageErrorPlataform() }}</p>
+            }
+        </mat-form-field>
+
+        <button mat-flat-button color="accent" (click)="sendRegister()">Primary</button>
     </form>
 </fieldset>

@@ -1,0 +1,24 @@
+.container {
+  width: 90%;
+  height: 90%;
+  overflow: hidden;
+  border: none;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: inherit;
+
+    mat-form-field {
+      display: inherit;
+      flex-direction: inherit;
+    }
+  }
+
+  button {
+    background: #FE5F55;
+  }
+}

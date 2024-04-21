@@ -1,0 +1,130 @@
+@import "../../../styles.scss";
+
+.container {
+  background: #FFF;
+  width: 100%;
+  height: 90%;
+  max-width: 100vw;
+
+  &__logo {
+    padding: 5rem 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+
+    img {
+      object-fit: contain;
+    }
+
+    h2 {
+      font-size: inherit;
+    }
+  }
+
+  .content {
+    padding: 0 2rem;
+    box-sizing: border-box;
+
+    &__username, &__password {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &__content {
+        position: relative;
+        width: 90%;
+
+        input {
+          position: relative;
+          z-index: 1;
+          padding: .5rem;
+          width: 100%;
+
+          &::placeholder {
+            color: $orange-color-main;
+          }
+        }
+
+        span {
+          position: absolute;
+          right: 10px;
+          z-index: 2;
+          color: inherit;
+          top: 10%;
+
+        }
+      }
+    }
+
+    &__username {
+      padding: .5rem 0;
+      margin: 0;
+    }
+
+    &__actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .8rem;
+      padding: 0 .5rem;
+    }
+
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      width: 95%;
+
+      app-button {
+        width: 100%;
+      }
+    }
+  }
+
+  &__register {
+    text-align: center;
+    font-size: .8rem;
+    color: $grey-color-secondary;
+
+    a {
+      font-weight: bolder;
+      color: $black-color-main;
+    }
+  }
+
+  hr {
+    width: 90%;
+  }
+
+  &__sso {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    gap: 1rem;
+    box-sizing: border-box;
+    align-items: center;
+
+    button {
+      width: 90%;
+      font-size: .9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none !important;
+      border: solid 1px $grey-color-secondary !important;
+      border-radius: 10px;
+      color: $grey-color-secondary !important;
+      box-sizing: border-box;
+      padding: .8rem;
+
+      svg {
+        padding: 0 .5rem ;
+      }
+    }
+  }
+}

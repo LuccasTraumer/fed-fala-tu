@@ -16,6 +16,6 @@ export class AppComponent {
   title = 'fala-tu';
 
   isShowHeader(): boolean {
-    return !this.location.path().includes('register');
+    return !(this.location.path().includes('register') || this.location.path().includes('login'));
   }
 }

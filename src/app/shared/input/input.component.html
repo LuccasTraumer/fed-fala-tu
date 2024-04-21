@@ -1,0 +1,11 @@
+<form [formGroup]="formGroup()" class="content">
+    <div class="content__data">
+        <input matInput [type]="type()" [placeholder]="inputPlaceholder()" [formControlName]="controlName()">
+        @if(icon()) {
+            <span class="material-icons">{{ icon() }}</span>
+        }
+    </div>
+    @if(setMessageError() !== '') {
+        <p class="text-warning"> {{ setMessageError() }}</p>
+    }
+</form>
