@@ -1,0 +1,30 @@
+<div class="container">
+    <img [src]="user.image" alt="" class="container__image">
+
+    <a (click)="goToSettings()">Edit profile Image</a>
+
+    @if (user) {
+        <div class="container__table">
+            <div class="container__table__row">
+                <p>Nome</p>
+                <p>{{ user.nome }}</p>
+            </div>
+            <div class="container__table__row">
+                <p>username</p>
+                <p>{{ user.username }}</p>
+            </div>
+            <div class="container__table__row">
+                <p>Email</p>
+                <p> {{ user.email }} </p>
+            </div>
+            <div class="container__table__row">
+                <p>Plataforma</p>
+                <div class="container__table__row__links">
+                    @for (link of user.links; track $index) {
+                        <a [href]="link" target="_blank"> {{ link }} </a>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

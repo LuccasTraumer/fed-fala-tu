@@ -15,6 +15,10 @@ export class AppComponent {
   location = inject(Location);
   title = 'fala-tu';
 
+  constructor() {
+    sessionStorage.setItem('auth', '')
+  }
+
   isShowHeader(): boolean {
     return !(this.location.path().includes('register') || this.location.path().includes('login'));
   }

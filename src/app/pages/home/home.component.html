@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div class="container">
+    <div class="container__search">
+        <input type="text" class="container__search__input" placeholder="Buscar">
+    </div>
+
+    <table class="container__table">
+        <tr class="container__table__head">
+            <th class="container__table__head__item">Nº</th>
+            <th class="container__table__head__item">Indicação</th>
+            <th class="container__table__head__item">Go</th>
+        </tr>
+
+        @for (item of listItens; track $index) {
+            <tr class="container__table__row">
+                <td class="container__table__row__num">{{ item.number }}</td>
+                <td class="container__table_row__street">{{ item.street }}</td>
+                <td class="container__table_row__button">
+                    <a [href]="item.link" target="_blank">Entrar</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

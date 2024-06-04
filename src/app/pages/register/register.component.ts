@@ -1,13 +1,14 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit, signal} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatButtonModule} from "@angular/material/button";
+import {HeaderComponent} from "../../shared/header/header.component";
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatButtonModule],
+  imports: [ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatButtonModule, HeaderComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
@@ -20,8 +21,14 @@ export class RegisterComponent implements OnInit {
   controlEmail!: FormControl;
   controlPhoneNumber!: FormControl;
   controlPlataform!: FormControl;
-  ngOnInit(): void {
 
+  messageErrorPlataform = signal('');
+  messageErrorPhone = signal('');
+  messageErrorEmail = signal('');
+  messageErrorLastName = signal('');
+  messageErrorFirstName = signal('');
+  ngOnInit(): void {
+    this.startRegisterFormField();
   }
 
   startControlField(): void {
@@ -65,54 +72,44 @@ export class RegisterComponent implements OnInit {
   }
 
 
-  setMessageErrorFirstName(): string {
-    let message = '';
-
+  setMessageErrorFirstName(): void {
     if (this.controlFirstName.hasError('required')) {
-      message = 'Campo precisa ser Preenchido!';
+      this.messageErrorFirstName.set('Campo precisa ser Preenchido!')
+    } else {
+      this.messageErrorFirstName.set('');
     }
-
-    return message;
   }
 
-  setMessageErrorLastName(): string {
-    let message = '';
-
+  setMessageErrorLastName(): void {
     if (this.controlLastName.hasError('required')) {
-      message = 'Campo precisa ser Preenchido!';
+      this.messageErrorLastName.set('Campo precisa ser Preenchido!');
+    } else {
+      this.messageErrorLastName.set('');
     }
-
-    return message;
   }
 
-  setMessageErrorEmail(): string {
-    let message = '';
-
+  setMessageErrorEmail(): void {
     if (this.controlEmail.hasError('required')) {
-      message = 'Campo precisa ser Preenchido!';
+      this.messageErrorEmail.set('Campo precisa ser Preenchido!');
+    } else {
+      this.messageErrorEmail.set('');
     }
-
-    return message;
   }
 
-  setMessageErrorPhone(): string {
-    let message = '';
-
+  setMessageErrorPhone(): void {
     if (this.controlPhoneNumber.hasError('required')) {
-      message = 'Campo precisa ser Preenchido!';
+      this.messageErrorPhone.set('Campo precisa ser Preenchido!')
+    } else {
+      this.messageErrorPhone.set('');
     }
-
-    return message;
   }
 
-  setMessageErrorPlataform(): string {
-    let message = '';
-
+  setMessageErrorPlataform(): void {
     if (this.controlPlataform.hasError('required')) {
-      message = 'Campo precisa ser Preenchido!';
+      this.messageErrorPlataform.set('Campo precisa ser Preenchido!');
+    } else {
+      this.messageErrorPlataform.set('');
     }
-
-    return message;
   }
   sendRegister() {
 

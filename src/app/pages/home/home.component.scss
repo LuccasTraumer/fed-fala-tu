@@ -1,0 +1,31 @@
+.container {
+  width: 95vw;
+  &__table {
+    width: 90%;
+
+    &__head {
+      width: 90%;
+
+      &__item {
+        width: 20%;
+      }
+    }
+
+    &__row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: .8rem 0;
+
+      &__num {
+        width: 20%;
+      }
+      &__street {
+        width: 20%;
+      }
+      &__button {
+        width: 20%;
+      }
+    }
+  }
+}

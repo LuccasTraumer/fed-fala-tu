@@ -1,7 +1,7 @@
 <div class="container">
     <div class="container__logo">
         <img ngSrc="../../../assets/images/logo_laranja.svg" loading="eager" height="108" width="108" alt="logo">
-        <h2 class="container__logo__text font-poppins">Fala, Tu!</h2>
+        <h2 class="container__logo__text font-poppins">Fortalecendo Vozes!</h2>
     </div>
 
     <form [formGroup]="formGroup" class="content">
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="content__button">
+        <div class="content__button" (click)="login()">
             <app-button [isDisabled]="!formGroup.valid" [textContent]="'Entrar'" [color]="'primary'"/>
         </div>
     </form>

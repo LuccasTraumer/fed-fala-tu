@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 30vw !important;
+    height: auto;
+    object-fit: contain;
+    border-radius: 50% !important;
+    padding-bottom: .5rem;
+  }
+
+  &__table {
+    padding-top: 2rem;
+    width: 90%;
+    &:first-child {
+      padding-right: .8rem;
+    }
+
+    &__row {
+      display: flex;
+      align-items: center;
+      p {
+        padding-right: .8rem;
+      }
+
+      &__links {
+        display: block;
+        font-size: .9rem;
+        color: #313131;
+      }
+    }
+  }
+}

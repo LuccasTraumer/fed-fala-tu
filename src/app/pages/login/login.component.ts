@@ -72,4 +72,9 @@ export class LoginComponent implements OnInit {
   forgetPassword() {
     this.router.navigate(['forget-password'])
   }
+
+    login(): void {
+      console.warn(`CLICK`);
+        this.router.navigate(['home']);
+    }
 }

@@ -1,1 +1,18 @@
-<p>header works!</p>
+<header class="container">
+    <img
+        src="assets/images/logo_laranja.svg"
+        alt="logo"
+        class="container__logo"
+        (click)="goToHome()"
+    >
+
+    @if (router.url.includes("home")) {
+        <img src="assets/images/profile.svg" alt="profile icon" class="container__profile" (click)="goToProfile()"/>
+    } @else {
+        <div class="container__menu-hamburguer">
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    }
+</header>
